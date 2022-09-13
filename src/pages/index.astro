@@ -1,96 +1,71 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Header from "../components/Header.astro";
+import Cards from "../components/Cards.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			Check out the <code>src/pages</code> directory to get started.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
+<Layout title='Welcome to Astro.'>
+	<Header />
+	<main class='max-w-screen-lg mx-auto'>
+		<h1 class='sr-only'>Alte Druckerei</h1>
+
+		<Cards title='2. OG'>
 			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
+				website='https://stephaniedierolf.de/'
+				phone='0179 1914906'
+				title='Stephanie Dierolf'
+				body='Illustration + Design'
+				email='hallo@stephaniedierolf.de'
 			/>
 			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
+				website='https://astro.build/integrations/'
+				title='Integrations'
+				body='Supercharge your project with new frameworks and libraries.'
 			/>
 			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
+				website='https://astro.build/themes/'
+				title='Themes'
+				body='Explore a galaxy of community-built starter themes.'
+			/>
+		</Cards>
+
+		<Cards title='1. OG'>
+			<Card
+				website='https://docs.astro.build/'
+				phone='931231232'
+				title='Framelocker'
+				body='Learn how Astro works and explore the official API docs.'
 			/>
 			<Card
-				href="https://astro.build/chat/"
-				title="Chat"
-				body="Come say hi to our amazing Discord community. ❤️"
+				website='https://astro.build/integrations/'
+				title='Integrations'
+				body='Supercharge your project with new frameworks and libraries.'
 			/>
-		</ul>
+			<Card
+				website='https://astro.build/themes/'
+				title='Themes'
+				body='Explore a galaxy of community-built starter themes.'
+			/>
+		</Cards>
+
+		<Cards title='UG'>
+			<Card
+				website='https://docs.astro.build/'
+				phone='0162/2050306'
+				title='Framelocker'
+				body='Learn how Astro works and explore the official API docs.'
+			/>
+			<Card
+				website='https://astro.build/integrations/'
+				title='Integrations'
+				body='Supercharge your project with new frameworks and libraries.'
+			/>
+			<Card
+				website='https://astro.build/themes/'
+				title='Themes'
+				body='Explore a galaxy of community-built starter themes.'
+			/>
+		</Cards>
 	</main>
 </Layout>
-
-<style>
-	:root {
-		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-	}
-
-	h1 {
-		margin: 2rem 0;
-	}
-
-	main {
-		margin: auto;
-		padding: 1em;
-		max-width: 60ch;
-	}
-
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--astro-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
-	}
-
-	@keyframes pulse {
-		0%,
-		100% {
-			background-position-y: 0%;
-		}
-		50% {
-			background-position-y: 80%;
-		}
-	}
-
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: #4f39fa;
-		padding: 1rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
-	}
-
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
-	}
-
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
