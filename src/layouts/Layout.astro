@@ -7,17 +7,29 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=pt-sans:400,700" rel="stylesheet" />
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='generator' content={Astro.generator} />
+		<link rel='preconnect' href='https://fonts.bunny.net' />
+		<link
+			href='https://fonts.bunny.net/css?family=pt-sans:400,700'
+			rel='stylesheet'
+		/>
 		<title>{title}</title>
+		<!-- Alpine Plugins -->
+		<script
+			defer
+			src='https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js'
+		></script>
+
+		<!-- Alpine Core -->
+		<script defer src='https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js'
+		></script>
 	</head>
-	<body class="bg-black sans">
+	<body class='bg-black sans'>
 		<slot />
 	</body>
 </html>
