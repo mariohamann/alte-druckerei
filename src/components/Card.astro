@@ -37,14 +37,17 @@ const contactChannels = [
 ---
 
 <li
+  tabindex="0"
+  class="outline-none"
   x-data="{ shown: false }" x-intersect="shown = true"
+  x-on:focus="shown = true; $nextTick(() => $focus.first());"
 >
   <div 
   x-show="shown"
   x-transition:enter="transition ease-out duration-1000"
   x-transition:enter-start="opacity-0"
   x-transition:enter-end="opacity-100"
-	class='bg-white/5 text-white pl-6 h-full py-6 duration-300 border-l-8 group p-8 border-white/10 hover:border-yellow-400 flex flex-col justify-between'>
+	class='bg-white/5 text-white pl-6 h-full py-6 duration-300 border-l-8 group p-8 border-white/10 hover:border-yellow-400 focus-within:border-yellow-400 flex flex-col justify-between'>
 	<h2 class='font-bold tracking-wider text-lg lg:text-xl'>
 		{title}
 	</h2>
@@ -59,7 +62,7 @@ const contactChannels = [
 				contactChannels.map((channel) => (
 				<div class='before:ml-3 before:mr-2 before:content-["·"] first-of-type:before:content-none'>	
         <a
-						class='transition-all underline underline-offset-4 decoration-4 uppercase decoration-transparent hover:decoration-yellow-400 delay-50  text-sm tracking-wide'
+						class='transition-all underline underline-offset-4 decoration-2 uppercase decoration-transparent hover:decoration-yellow-400 delay-50  text-sm tracking-wide'
 						href={channel.link}
 						rel='noopener noreferrer'
 					>
